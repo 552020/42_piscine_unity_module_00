@@ -60,25 +60,12 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
-        "*.unity": "yaml"
+        "*.unity": "yaml",
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "42_piscine_unity_module_00.slnx",
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#18313A",
-        "titleBar.activeBackground": "#214451",
-        "titleBar.activeForeground": "#F9FCFD"
-    },
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "[csharp]": {
-        "editor.defaultFormatter": "ms-dotnettools.csharp"
-    },
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
-    }
+    "dotnet.defaultSolution": "unityModule00.slnx"
 }
