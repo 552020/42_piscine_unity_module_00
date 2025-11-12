@@ -91,7 +91,7 @@ public class Player : MonoBehaviour   // A Unity script must extend MonoBehaviou
 
         // WASD movement:
         float h = (k.aKey.isPressed ? -1f : 0f) + (k.dKey.isPressed ? 1f : 0f);
-        float v = (k.sKey.isPressed ? -1f : 0f) + (k.wKey.isPressed ? 1f : 0f);
+        float v = (k.sKey.isPressed ? 1f : 0f) + (k.wKey.isPressed ? -1f : 0f);
         Vector3 raw = new Vector3(v, 0f, h);
         moveInput = raw.sqrMagnitude > 1f ? raw.normalized : raw;
 
