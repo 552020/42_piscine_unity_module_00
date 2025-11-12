@@ -242,9 +242,7 @@ GameObject:
   - component: {fileID: 195616083}
   - component: {fileID: 195616082}
   - component: {fileID: 195616081}
-  - component: {fileID: 195616085}
   - component: {fileID: 195616087}
-  - component: {fileID: 195616086}
   - component: {fileID: 195616088}
   m_Layer: 0
   m_Name: Player
@@ -345,30 +343,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.737, y: 17.035, z: -3.136}
---- !u!114 &195616085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195616080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0961147ac9580e8a9f5fc0fadc23d3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!114 &195616086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195616080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e728568d9d45c2a87faa9fa22282e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!54 &195616087
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -413,8 +387,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
-  groundCheckDistance: 0.6
-  debugGroundLogs: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
