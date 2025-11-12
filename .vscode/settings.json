@@ -72,5 +72,14 @@
         "activityBar.background": "#18313A",
         "titleBar.activeBackground": "#214451",
         "titleBar.activeForeground": "#F9FCFD"
+    },
+    // Added formatter configuration for C# auto-formatting
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
     }
 }

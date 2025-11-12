@@ -1,12 +1,12 @@
-using UnityEngine;               
-using UnityEngine.InputSystem;    
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Player : MonoBehaviour   
+public class Player : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;     
-    public float jumpForce = 7f;     
+    public float moveSpeed = 5f;
+    public float jumpForce = 7f;
 
     bool isGameOver = false;
     void OnCollisionEnter(Collision collision)
@@ -24,13 +24,13 @@ public class Player : MonoBehaviour
 
     }
 
-    public LayerMask groundMask;      
+    public LayerMask groundMask;
 
-    
 
-    Rigidbody rb;                   
-    bool isGrounded;                
-    Vector3 moveInput;              
+
+    Rigidbody rb;
+    bool isGrounded;
+    Vector3 moveInput;
     // A 3-component vector (x, y, z).
     // Stores the direction the player wants to move (from keyboard).
     // But y is always 0 because we only move horizontally.
@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     // Called before Start() - Best place to initialize
     void Awake()
     {
+
+
         rb = GetComponent<Rigidbody>();          // Grab Rigidbody on this GameObject
         rb.freezeRotation = true;                // Prevent tipping over
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -70,11 +72,11 @@ public class Player : MonoBehaviour
         // Note: ~0 is bitwise NOT operator - flips all bits to 1, meaning "all layers" (-1)
         int mask = groundMask.value == 0 ? ~0 : groundMask.value;
 
-    // Simplified: our player uses a SphereCollider with radius 0.5, center (0,0,0), scale (1,1,1)
-    // If these assumptions change, switch back to reading from the collider dynamically.
-    const float radius = 0.5f;
-    // Lift origin a tiny bit so the cast doesn't start overlapped
-    Vector3 sphereCenter = transform.position;
+        // Simplified: our player uses a SphereCollider with radius 0.5, center (0,0,0), scale (1,1,1)
+        // If these assumptions change, switch back to reading from the collider dynamically.
+        const float radius = 0.5f;
+        // Lift origin a tiny bit so the cast doesn't start overlapped
+        Vector3 sphereCenter = transform.position;
         // Minimal overlap test for grounded state at the "foot" of the sphere
         Vector3 foot = sphereCenter - Vector3.up * (radius - 0.02f);
         isGrounded = Physics.CheckSphere(foot, radius * 0.98f, mask, QueryTriggerInteraction.Ignore);
