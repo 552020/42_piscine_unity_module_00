@@ -51,15 +51,11 @@ public class Player : MonoBehaviour
     {
         if (isGameOver)
         {
-            // Player.Destroy(this);
             Destroy(this.gameObject);
             return;
         }
 
-        var k = Keyboard.current;    // Gives access to keyboard state
-
-        // WASD + Arrow keys movement:
-        // Combine WASD and arrow key inputs so either control scheme works.
+        var k = Keyboard.current;
         float h =
             (k.aKey.isPressed ? -1f : 0f) + (k.dKey.isPressed ? 1f : 0f) +
             (k.leftArrowKey != null && k.leftArrowKey.isPressed ? -1f : 0f) + (k.rightArrowKey != null && k.rightArrowKey.isPressed ? 1f : 0f);  // h = horizontal (left/right)
