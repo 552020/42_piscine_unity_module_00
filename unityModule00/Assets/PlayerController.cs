@@ -58,9 +58,15 @@ public class Player : MonoBehaviour
 
         var k = Keyboard.current;    // Gives access to keyboard state
 
-        // WASD movement:
-        float h = (k.aKey.isPressed ? -1f : 0f) + (k.dKey.isPressed ? 1f : 0f);  // h = horizontal (left/right)
-        float v = (k.sKey.isPressed ? 1f : 0f) + (k.wKey.isPressed ? -1f : 0f);  // v = vertical in 2D sense (forward/back)
+        // WASD + Arrow keys movement:
+        // Combine WASD and arrow key inputs so either control scheme works.
+        float h =
+            (k.aKey.isPressed ? -1f : 0f) + (k.dKey.isPressed ? 1f : 0f) +
+            (k.leftArrowKey != null && k.leftArrowKey.isPressed ? -1f : 0f) + (k.rightArrowKey != null && k.rightArrowKey.isPressed ? 1f : 0f);  // h = horizontal (left/right)
+
+        float v =
+            (k.sKey.isPressed ? 1f : 0f) + (k.wKey.isPressed ? -1f : 0f) +
+            (k.downArrowKey != null && k.downArrowKey.isPressed ? 1f : 0f) + (k.upArrowKey != null && k.upArrowKey.isPressed ? -1f : 0f);  // v = vertical in 2D sense (forward/back)
         Vector3 raw = new Vector3(v, 0f, h);  // raw = unnormalized input vector
         // sqrMagnitude = squared length of vector (faster than magnitude, avoids sqrt)
         // normalized = vector scaled to length 1, keeping same direction
